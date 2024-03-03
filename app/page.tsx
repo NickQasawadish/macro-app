@@ -30,7 +30,6 @@ export default function Home() {
             <div className="flex flex-col">
               <span className="text-xl font-semibold text-black">{dish.name}</span>
               <span className="text-gray-700">{dish.description}</span>
-              {/* Wrap Button with Link for navigation */}
               <Link href="https://www.myfitnesspal.com/nutrition-facts-calories" passHref>
                 <Button as="a" variant="outline">Recipe</Button>
               </Link>
