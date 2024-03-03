@@ -9,18 +9,6 @@ export default function Home() {
     { name: "Yogurt", description: "Yogurt with mixed granola and fruit", image: "/yogurt_breakfast.jpeg" }
   ];
 
-  const lunchDishes = [
-    { name: "Sandwich", description: "Turkey, bacon, cheese, and avocado sandwich", image: "/sandwich_lunch.jpeg" },
-    { name: "Salad", description: "Fresh garden salad with vinaigrette", image: "/salad_lunch.jpeg" },
-    { name: "Burger", description: "Beef burger with cheese, bacon and a side of fries", image: "/burger_lunch.jpeg" }
-  ];
-
-  const dinnerDishes = [
-    { name: "Steak", description: "Grilled steak with a side of greens", image: "/steak_dinner.jpeg" },
-    { name: "Sushi", description: "Sushi roll with shrimp, grab, and avocado", image: "/sushi_dinner.jpeg" },
-    { name: "Pizza", description: "Meat lover pizza with pepperoni, salami, sausage, and bacon", image: "/pizza_dinner.jpeg" }
-  ];
-
   const renderDishSection = (title, dishes) => (
     <div className="mb-12">
       <h2 className="mb-6 text-3xl font-bold text-center">{title}</h2>
@@ -31,8 +19,8 @@ export default function Home() {
               <span className="text-xl font-semibold text-black">{dish.name}</span>
               <span className="text-gray-700">{dish.description}</span>
               {/* Wrap Button with Link for navigation */}
-              <Link href="https://www.myfitnesspal.com/nutrition-facts-calories" passHref>
-                <Button as="a" variant="outline">Recipe</Button>
+              <Link href={`/dish/${encodeURIComponent(dish.name)}`} passHref>
+                <Button as="a" variant="outline">More Info</Button>
               </Link>
             </div>
             <Image src={dish.image} alt={dish.name} width={100} height={100} className="rounded-md" />
