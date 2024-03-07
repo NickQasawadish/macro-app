@@ -21,7 +21,7 @@ export default function Home() {
     { name: "Pizza", description: "Meat lover pizza with pepperoni, salami, sausage, and bacon", image: "/pizza_dinner.jpeg" }
   ];
 
-  const renderDishSection = (title, dishes) => (
+  const renderDishSection = (title: string, dishes: any[]) => (
     <div className="mb-12">
       <h2 className="mb-6 text-3xl font-bold text-center">{title}</h2>
       <div className="space-y-4">
@@ -31,7 +31,7 @@ export default function Home() {
               <span className="text-xl font-semibold text-black">{dish.name}</span>
               <span className="text-gray-700">{dish.description}</span>
               <Link href="https://www.myfitnesspal.com/nutrition-facts-calories" passHref>
-                <Button as="a" variant="outline">Recipe</Button>
+                <Button variant="outline">Recipe</Button>
               </Link>
             </div>
             <Image src={dish.image} alt={dish.name} width={100} height={100} className="rounded-md" />
